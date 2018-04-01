@@ -53,7 +53,7 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 	private void intiPanelVector(){
 		
 		RectTransform panelRectTransform = vectorPanel.GetComponent<RectTransform> ();
-		panelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height*0.8f);
+		panelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height);
 	}
 
 	public void OnTrackableStateChanged(
