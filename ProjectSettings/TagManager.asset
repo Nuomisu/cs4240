@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - v1z
+  - v2y
+  - v2z
+  - v3x
+  - v3z
+  - minus
+  - v3y
+  - v1x
+  - plus
+  - v2x
+  - v1y
+  - imageTarget
   layers:
   - Default
   - TransparentFX

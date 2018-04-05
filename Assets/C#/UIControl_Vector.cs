@@ -101,6 +101,13 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			GUI.Label (new Rect (native_width*0.5f - 250, 80, 500, 70), "<b> Vector Calculator </b>", normarlTextStyle);
 			menuBtn.gameObject.SetActive (true);
 
+			GameObject[] all = GameObject.FindGameObjectsWithTag ("imageTarget");
+			foreach(GameObject each in all){
+				if (!each.name.Equals(this.name)) {
+					each.SetActive (false);
+				}
+			}
+
 		} else {
 
 			GUI.Label(new Rect(native_width*0.5f - 250, 80, 500, 70), "<b> Find a card! </b>",normarlTextStyle);
@@ -108,6 +115,15 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			vectorPanel.gameObject.SetActive (false);
 			digitsPanel.gameObject.SetActive (false);
 			buttonOpen = false;
+
+
+			GameObject[] all = GameObject.FindGameObjectsWithTag ("imageTarget");
+			foreach(GameObject each in all){
+				if (!each.name.Equals(this.name)) {
+					each.SetActive (true);
+				}
+			}
+
 		}
 			
 	}

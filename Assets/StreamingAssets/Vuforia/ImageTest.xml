@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="cardTwo" size="289.000000 438.348999" />
-    <ImageTarget name="cardOne" size="289.000000 452.000000" />
+    <ImageTarget name="final" size="600.000000 798.668884" />
+    <ImageTarget name="ImageFive" size="800.000000 1136.697266" />
+    <ImageTarget name="ImageFour" size="500.000000 717.757019" />
+    <ImageTarget name="imageOne" size="100.000000 70.666664" />
+    <ImageTarget name="QR" size="600.000000 600.000000" />
+    <ImageTarget name="vector_parallelogram_law_jpg" size="530.000000 263.000000" />
+    <ImageTarget name="abstract_math_background_design_556564" size="600.000000 424.000000" />
+    <ImageTarget name="math" size="650.000000 720.000000" />
+    <ImageTarget name="logowithborder" size="100.000000 39.784946" />
     <ImageTarget name="KelThuzad" size="300.000000 395.000000" />
-    <ImageTarget name="hearthstone" size="600.000000 600.000000" />
-    <ImageTarget name="images" size="225.000000 225.000000" />
-    <ImageTarget name="mine" size="268.000000 346.000000" />
   </Tracking>
 </QCARConfig>

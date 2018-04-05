@@ -28,8 +28,8 @@ public class Resolution_Control : MonoBehaviour {
 	void Start () {
 		
 		RectTransform rt = logo.GetComponent<RectTransform>();
-		rt.sizeDelta = new Vector2(250*ratio, 60*ratio);
-		rt.anchoredPosition = new Vector2 (250*ratio*0.5f, -60*ratio*0.5f);
+		rt.sizeDelta = new Vector2(360*ratio, 106*ratio);
+		rt.anchoredPosition = new Vector2 (-360*ratio*0.5f, -106*ratio*0.5f);
 
 		RectTransform rt2 = edit.GetComponent<RectTransform>();
 		rt2.sizeDelta = new Vector2(200*ratio, 200*ratio);
