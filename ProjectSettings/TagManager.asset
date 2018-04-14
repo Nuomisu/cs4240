@@ -16,6 +16,15 @@ TagManager:
   - v2x
   - v1y
   - imageTarget
+  - v1x_s
+  - v1y_s
+  - v1z_s
+  - v2x_s
+  - v2y_s
+  - v2z_s
+  - v3x_s
+  - v3y_s
+  - v3z_s
   layers:
   - Default
   - TransparentFX

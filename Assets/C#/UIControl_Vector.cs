@@ -11,7 +11,8 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 	float native_height= 1334f;
 
 	public Button menuBtn;
-	public GameObject vectorPanel; 
+	public GameObject vectorPanel;
+	public GameObject bottomPanel;
 	public GameObject digitsPanel;
 	public Transform v1_tar;
 	public Transform v2_tar;
@@ -54,6 +55,11 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 		
 		RectTransform panelRectTransform = vectorPanel.GetComponent<RectTransform> ();
 		panelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height);
+
+		RectTransform bottompanelRectTransform = bottomPanel.GetComponent<RectTransform> ();
+		bottompanelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height * 0.11f);
+
+
 	}
 
 	public void OnTrackableStateChanged(
@@ -100,6 +106,18 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 		if (mShowGUIButton) {
 			GUI.Label (new Rect (native_width*0.5f - 250, 80, 500, 70), "<b> Vector Calculator </b>", normarlTextStyle);
 			menuBtn.gameObject.SetActive (true);
+			bottomPanel.gameObject.SetActive (true);
+
+			if (buttonOpen) {
+				//bottomPanel.gameObject.SetActive (false);
+				RectTransform rt = bottomPanel.GetComponent<RectTransform>();
+				rt.anchoredPosition = new Vector2 (0, -Screen.height);
+
+			} else {
+				//bottomPanel.gameObject.SetActive (true);
+				RectTransform rt = bottomPanel.GetComponent<RectTransform>();
+				rt.anchoredPosition = new Vector2 (0, -Screen.height/2 + Screen.height * 0.11f / 2);
+			}
 
 			GameObject[] all = GameObject.FindGameObjectsWithTag ("imageTarget");
 			foreach(GameObject each in all){
@@ -113,6 +131,7 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			GUI.Label(new Rect(native_width*0.5f - 250, 80, 500, 70), "<b> Find a card! </b>",normarlTextStyle);
 			menuBtn.gameObject.SetActive (false);
 			vectorPanel.gameObject.SetActive (false);
+			bottomPanel.gameObject.SetActive (false);
 			digitsPanel.gameObject.SetActive (false);
 			buttonOpen = false;
 
@@ -135,9 +154,20 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 
 		if (buttonOpen) {
 			vectorPanel.gameObject.SetActive (true);
+			//bottomPanel.gameObject.SetActive (false);
+
+			RectTransform rt = bottomPanel.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector2 (0, -Screen.height);
+
+
 			intiPanelVector ();
 		} else {
 			vectorPanel.gameObject.SetActive (false);
+			//bottomPanel.gameObject.SetActive (true);
+
+			RectTransform rt = bottomPanel.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector2 (0, -Screen.height/2 + Screen.height * 0.11f / 2);
+
 		}
 	}
 
@@ -157,35 +187,49 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 
 
 	private GameObject targetCell;
+	private GameObject targetCell_small;
+
 	private string targetName;
 
 	public void EnableDigitPanel(string type){
 		targetName = type;
 		targetCell = GameObject.FindWithTag(targetName);
+
+		targetCell_small = GameObject.FindWithTag (targetName + "_s");
+
 		digitsPanel.gameObject.SetActive (true);
 
 	}
 
 	public void DigitClick(string value){
 
+		targetCell = GameObject.FindWithTag(targetName);
+		targetCell_small = GameObject.FindWithTag (targetName + "_s");
+
 		targetCell.GetComponentInChildren<Text>().text = value;
+		targetCell_small.GetComponentInChildren<Text>().text = value;
 
 		int num = int.Parse (value);
 		switch (targetName) {
 		case "v1x":
 			Setv1x (num);
+			targetName = "v1y";
 			break;
 		case "v1y":
 			Setv1y (num);
+			targetName = "v1z";
 			break;
 		case "v1z":
 			Setv1z (num);
+			targetName = "v2x";
 			break;
 		case "v2x":
 			Setv2x (num);
+			targetName = "v2y";
 			break;
 		case "v2y":
 			Setv2y (num);
+			targetName = "v2z";
 			break;
 		case "v2z":
 			Setv2z (num);
@@ -230,16 +274,19 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 	public Button bMinus;
 
 	public Sprite[] sprites;
+	public Button smallOperator;
 
 	public void operatorPlus(){
 		operatorChosed = "plus";
 
 		bPlus.image.overrideSprite = sprites [1];
+		smallOperator.image.overrideSprite = sprites [1];
 		bMinus.image.overrideSprite = sprites [2];
 	}
 	public void operatorMinus(){
 		operatorChosed = "minus";
 		bPlus.image.overrideSprite = sprites [0];
+		smallOperator.image.overrideSprite = sprites [3];
 		bMinus.image.overrideSprite = sprites [3];
 	}
 
@@ -267,6 +314,13 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			temp.GetComponentInChildren<Text>().text = v3_y.ToString();
 			temp = GameObject.FindWithTag("v3z");
 			temp.GetComponentInChildren<Text>().text = v3_z.ToString();
+		
+			temp = GameObject.FindWithTag("v3x_s");
+			temp.GetComponentInChildren<Text>().text = v3_x.ToString();
+			temp = GameObject.FindWithTag("v3y_s");
+			temp.GetComponentInChildren<Text>().text = v3_y.ToString();
+			temp = GameObject.FindWithTag("v3z_s");
+			temp.GetComponentInChildren<Text>().text = v3_z.ToString();
 		}
 	}
 		
@@ -282,18 +336,11 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 
 			v1_tar.gameObject.SetActive (true);
 
-			v1_tar.localPosition = new Vector3 (v1_x*ratio, v1_y*ratio, v1_z*ratio);
-			v1_cube.localPosition = new Vector3 (v1_x*ratio/2f, v1_y*ratio/2f, v1_z*ratio/2f);
+			v1_tar.localPosition = new Vector3 (v1_x*ratio, v1_y*ratio + 2, v1_z*ratio);
+			v1_cube.localPosition = new Vector3 (v1_x*ratio/2f, v1_y*ratio/2f + 2, v1_z*ratio/2f);
 			Vector3 mi = v1_cube.transform.localScale;
 
-
-			//Debug.Log ("OOOO: "+v1_x + " "+ v1_y + " "+ v1_z);
-			//Debug.Log ("ooooo:" + Math.Sqrt(
-				//(v1_x*ratio) * (v1_x*ratio) 
-				//+ (v1_y*ratio) * (v1_y*ratio) 
-				//+ (v1_z*ratio) * (v1_z*ratio)));
-
-			mi.z = //v1_cube_initZ/2f + 
+			mi.z =
 				(float) Math.Sqrt(
 					(v1_x*ratio) * (v1_x*ratio) 
 					+ (v1_y*ratio) * (v1_y*ratio) 
@@ -309,8 +356,8 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 
 			v2_tar.gameObject.SetActive (true);
 
-			v2_tar.localPosition = new Vector3 (v2_x*ratio, v2_y*ratio, v2_z*ratio);
-			v2_cube.localPosition = new Vector3 (v2_x*ratio/2f, v2_y*ratio/2f, v2_z*ratio/2f);
+			v2_tar.localPosition = new Vector3 (v2_x*ratio, v2_y*ratio + 2, v2_z*ratio);
+			v2_cube.localPosition = new Vector3 (v2_x*ratio/2f, v2_y*ratio/2f + 2, v2_z*ratio/2f);
 			Vector3 mi2 = v2_cube.transform.localScale;
 
 			mi2.z = 
@@ -330,8 +377,8 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 
 			v3_tar.gameObject.SetActive (true);
 
-			v3_tar.localPosition = new Vector3 (v3_x*ratio, v3_y*ratio, v3_z*ratio);
-			v3_cube.localPosition = new Vector3 (v3_x*ratio/2f, v3_y*ratio/2f, v3_z*ratio/2f);
+			v3_tar.localPosition = new Vector3 (v3_x*ratio, v3_y*ratio + 2, v3_z*ratio);
+			v3_cube.localPosition = new Vector3 (v3_x*ratio/2f, v3_y*ratio/2f + 2, v3_z*ratio/2f);
 
 			Vector3 mi3 = v3_cube.transform.localScale;
 			mi3.z = 
