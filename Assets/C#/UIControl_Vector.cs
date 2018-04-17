@@ -23,7 +23,7 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 	public Transform v3_cube;
 
 	const float ratio = 0.1f;
-
+	private float ratio2 = Screen.width/1080f;
 
 	private TrackableBehaviour mTrackableBehaviour;
 
@@ -56,8 +56,8 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 		RectTransform panelRectTransform = vectorPanel.GetComponent<RectTransform> ();
 		panelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height);
 
-		RectTransform bottompanelRectTransform = bottomPanel.GetComponent<RectTransform> ();
-		bottompanelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height * 0.11f);
+		//RectTransform bottompanelRectTransform = bottomPanel.GetComponent<RectTransform> ();
+		//bottompanelRectTransform.sizeDelta = new Vector2 (Screen.width, Screen.height * 0.11f);
 
 
 	}
@@ -116,7 +116,9 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			} else {
 				//bottomPanel.gameObject.SetActive (true);
 				RectTransform rt = bottomPanel.GetComponent<RectTransform>();
-				rt.anchoredPosition = new Vector2 (0, -Screen.height/2 + Screen.height * 0.11f / 2);
+				//rt.anchoredPosition = new Vector2 (0*ratio2, -855*ratio2);
+				rt.anchoredPosition = new Vector2 (0*ratio, -Screen.height/2 + 250/2*ratio2);
+
 			}
 
 			GameObject[] all = GameObject.FindGameObjectsWithTag ("imageTarget");
@@ -238,34 +240,37 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 	}
 
 	public void SignClick(){
-		
+
+		Debug.Log ("Sign target name: "+targetName);
 
 		switch (targetName) {
 		case "v1x":
 			SetSignv1x ();
-			targetCell.GetComponentInChildren<Text>().text = (-v1_x).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v1_x).ToString();
 			break;
 		case "v1y":
 			SetSignv1y ();
-			targetCell.GetComponentInChildren<Text>().text = (-v1_y).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v1_y).ToString();
 			break;
 		case "v1z":
 			SetSignv1z ();
-			targetCell.GetComponentInChildren<Text>().text = (-v1_z).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v1_z).ToString();
 			break;
 		case "v2x":
 			SetSignv2x ();
-			targetCell.GetComponentInChildren<Text>().text = (-v2_x).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v2_x).ToString();
 			break;
 		case "v2y":
 			SetSignv2y ();
-			targetCell.GetComponentInChildren<Text>().text = (-v2_y).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v2_y).ToString();
 			break;
 		case "v2z":
 			SetSignv2z ();
-			targetCell.GetComponentInChildren<Text>().text = (-v2_z).ToString();
+			targetCell.GetComponentInChildren<Text>().text = (v2_z).ToString();
 			break;
 		}
+
+		calculate ();
 	}
 
 	private string operatorChosed = "plus";
@@ -332,12 +337,12 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 		if (v1_x == invalid || v1_y == invalid || v1_z == invalid) {
 			//Debug.Log ("ooooo:" + v1_x + " "+ v1_y + " " + v1_z);
 		}else {
-			Debug.Log ("Vector 1 is ready.");
+			//Debug.Log ("Vector 1 is ready.");
 
 			v1_tar.gameObject.SetActive (true);
 
-			v1_tar.localPosition = new Vector3 (v1_x*ratio, v1_y*ratio + 2, v1_z*ratio);
-			v1_cube.localPosition = new Vector3 (v1_x*ratio/2f, v1_y*ratio/2f + 2, v1_z*ratio/2f);
+			v1_tar.localPosition = new Vector3 (v1_x*ratio, v1_y*ratio + 1.5f, v1_z*ratio);
+			v1_cube.localPosition = new Vector3 (v1_x*ratio/2f, v1_y*ratio/2f + 1.5f, v1_z*ratio/2f);
 			Vector3 mi = v1_cube.transform.localScale;
 
 			mi.z =
@@ -352,12 +357,12 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 		if (v2_x == invalid || v2_y == invalid || v2_z == invalid) {
 			
 		}else {
-			Debug.Log ("Vector 2 is ready.");
+			//Debug.Log ("Vector 2 is ready.");
 
 			v2_tar.gameObject.SetActive (true);
 
-			v2_tar.localPosition = new Vector3 (v2_x*ratio, v2_y*ratio + 2, v2_z*ratio);
-			v2_cube.localPosition = new Vector3 (v2_x*ratio/2f, v2_y*ratio/2f + 2, v2_z*ratio/2f);
+			v2_tar.localPosition = new Vector3 (v2_x*ratio, v2_y*ratio + 1.5f, v2_z*ratio);
+			v2_cube.localPosition = new Vector3 (v2_x*ratio/2f, v2_y*ratio/2f + 1.5f, v2_z*ratio/2f);
 			Vector3 mi2 = v2_cube.transform.localScale;
 
 			mi2.z = 
@@ -373,12 +378,12 @@ public class UIControl_Vector : MonoBehaviour, ITrackableEventHandler {
 			
 		}else {
 
-			Debug.Log ("Vector 3 is ready.");
+			//Debug.Log ("Vector 3 is ready.");
 
 			v3_tar.gameObject.SetActive (true);
 
-			v3_tar.localPosition = new Vector3 (v3_x*ratio, v3_y*ratio + 2, v3_z*ratio);
-			v3_cube.localPosition = new Vector3 (v3_x*ratio/2f, v3_y*ratio/2f + 2, v3_z*ratio/2f);
+			v3_tar.localPosition = new Vector3 (v3_x*ratio, v3_y*ratio + 1.5f, v3_z*ratio);
+			v3_cube.localPosition = new Vector3 (v3_x*ratio/2f, v3_y*ratio/2f + 1.5f, v3_z*ratio/2f);
 
 			Vector3 mi3 = v3_cube.transform.localScale;
 			mi3.z = 

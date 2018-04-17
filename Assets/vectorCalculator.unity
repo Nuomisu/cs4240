@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -138,8 +138,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60438742}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 2, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 0.01, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 2
@@ -298,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 82178842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09633334, y: 0.09633334, z: 0.09633334}
+  m_LocalScale: {x: 0.04816667, y: 0.04816667, z: 0.04816667}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 3
@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 118373421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09633333, y: 0.09633333, z: 0.09633333}
+  m_LocalScale: {x: 0.048166666, y: 0.048166666, z: 0.048166666}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 4
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 128456684}
   - component: {fileID: 128456683}
   m_Layer: 5
-  m_Name: ImgVectorThree
+  m_Name: ImgVectorThree_s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,8 +629,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 136484566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 8
@@ -1438,7 +1438,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.37974682, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1491,7 +1491,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 2d6ec2be00000000000000bf000000000000803f0000000000000000000000002d6ec2be000000000000003f000000000000803f00000000000000000000803f2d6ec23e00000000000000bf000000000000803f000000000000803f000000002d6ec23e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1604,7 +1604,7 @@ Prefab:
       objectReference: {fileID: 567399966}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mTrackableName
-      value: KelThuzad
+      value: QR
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mDataSetPath
@@ -1612,27 +1612,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mAspectRatio
-      value: 1.3166667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mWidth
-      value: 300
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mHeight
-      value: 395
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 395
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 395
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_LocalScale.z
-      value: 395
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: mPreserveChildSize
@@ -1769,7 +1769,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: KelThuzadMaterial
+  m_Name: QRMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1874,7 +1874,7 @@ GameObject:
   - component: {fileID: 643154641}
   - component: {fileID: 643154640}
   m_Layer: 5
-  m_Name: BtnEqual
+  m_Name: BtnEqual_s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2886,7 +2886,7 @@ GameObject:
   - component: {fileID: 870070507}
   - component: {fileID: 870070506}
   m_Layer: 5
-  m_Name: BtnV1x
+  m_Name: BtnV1x_s
   m_TagString: v1x_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3150,8 +3150,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 887981030}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 2, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 0.01, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 0
@@ -3384,7 +3384,7 @@ GameObject:
   - component: {fileID: 939014310}
   - component: {fileID: 939014309}
   m_Layer: 5
-  m_Name: BtnV3x
+  m_Name: BtnV3x_s
   m_TagString: v3x_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4079,7 +4079,7 @@ GameObject:
   - component: {fileID: 1105466628}
   - component: {fileID: 1105466627}
   m_Layer: 5
-  m_Name: ImgVectorOne
+  m_Name: ImgVectorOne_s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4416,6 +4416,24 @@ MonoBehaviour:
   - {fileID: 794051637}
   - {fileID: 1360519878}
   - {fileID: 962964837}
+  smallPanel: {fileID: 649753377}
+  smallVectorOne: {fileID: 1105466625}
+  smallVectorTwo: {fileID: 1808609713}
+  smallVectorThree: {fileID: 128456681}
+  smallPlus: {fileID: 1243470560}
+  smallEqual: {fileID: 643154638}
+  smallV1:
+  - {fileID: 870070507}
+  - {fileID: 2076417885}
+  - {fileID: 1918758366}
+  smallV3:
+  - {fileID: 2080249147}
+  - {fileID: 1962159679}
+  - {fileID: 1173317075}
+  smallV2:
+  - {fileID: 939014309}
+  - {fileID: 1304765557}
+  - {fileID: 1642120254}
 --- !u!1 &1166094773
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,7 +4520,7 @@ GameObject:
   - component: {fileID: 1173317076}
   - component: {fileID: 1173317075}
   m_Layer: 5
-  m_Name: BtnV2z
+  m_Name: BtnV2z_s
   m_TagString: v2z_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4624,7 +4642,7 @@ GameObject:
   - component: {fileID: 1243470563}
   - component: {fileID: 1243470562}
   m_Layer: 5
-  m_Name: BtnPlus
+  m_Name: BtnPlus_s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4965,7 +4983,7 @@ GameObject:
   - component: {fileID: 1304765558}
   - component: {fileID: 1304765557}
   m_Layer: 5
-  m_Name: BtnV3y
+  m_Name: BtnV3y_s
   m_TagString: v3y_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5575,8 +5593,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452035067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 7
@@ -6009,7 +6027,7 @@ Transform:
   m_GameObject: {fileID: 1638503739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09633333, y: 0.09633333, z: 0.09633333}
+  m_LocalScale: {x: 0.048166666, y: 0.048166666, z: 0.048166666}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 5
@@ -6079,7 +6097,7 @@ GameObject:
   - component: {fileID: 1642120255}
   - component: {fileID: 1642120254}
   m_Layer: 5
-  m_Name: BtnV3z
+  m_Name: BtnV3z_s
   m_TagString: v3z_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6628,7 +6646,7 @@ GameObject:
   - component: {fileID: 1808609716}
   - component: {fileID: 1808609715}
   m_Layer: 5
-  m_Name: ImgVectorTwo
+  m_Name: ImgVectorTwo_s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7014,7 +7032,7 @@ GameObject:
   - component: {fileID: 1918758367}
   - component: {fileID: 1918758366}
   m_Layer: 5
-  m_Name: BtnV1z
+  m_Name: BtnV1z_s
   m_TagString: v1z_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7325,7 +7343,7 @@ GameObject:
   - component: {fileID: 1962159680}
   - component: {fileID: 1962159679}
   m_Layer: 5
-  m_Name: BtnV2y
+  m_Name: BtnV2y_s
   m_TagString: v2y_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7460,8 +7478,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1965110567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 2, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 0.01, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 1
@@ -7545,8 +7563,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974483288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1132732467}
   m_RootOrder: 6
@@ -7709,7 +7727,7 @@ GameObject:
   - component: {fileID: 2076417886}
   - component: {fileID: 2076417885}
   m_Layer: 5
-  m_Name: BtnV1y
+  m_Name: BtnV1y_s
   m_TagString: v1y_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7831,7 +7849,7 @@ GameObject:
   - component: {fileID: 2080249148}
   - component: {fileID: 2080249147}
   m_Layer: 5
-  m_Name: BtnV2x
+  m_Name: BtnV2x_s
   m_TagString: v2x_s
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
